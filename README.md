@@ -9,7 +9,8 @@ You’ll be building a web app that allows users to send messages to each other.
 Assignment
 
     Keep in mind that the apps we mentioned earlier have entire teams of developers working on them, so you shouldn’t feel 
-    the need to go overboard with features in your app. At a minimum, though, your app should include the following core functionality:
+    the need to go overboard with features in your app. At a minimum, though, your app should include the following core 
+    functionality:
         Authorization
         Sending messages to another user
         Customizing a user profile
@@ -23,6 +24,7 @@ Extra credit
 
     Allow sending images in chat
     Add a friends list that users can add other users to and see when someone is online (alternative: “Add a users list
-    to show which user’s are currently online”; same thing except maybe a step or two less since it doesn’t require adding a friend)
+    to show which user’s are currently online”; same thing except maybe a step or two less since it doesn’t require 
+    adding a friend)
     Allow users to create and send messages in group chats
 
