@@ -1,0 +1,26 @@
+extends layout 
+
+block content 
+  .auth
+    form#authenticate.authenticate(method="POST" action="/unregister")
+        .formtitle 
+            h3 Messengineering
+        .formcontainer
+            .formsubtitle 
+                p Unregister :: enter your email and password
+            .inputlabel 
+                .label
+                    label(for="email") email: 
+                .input
+                    input#email.email(name="email" type="email")
+            .inputlabel 
+                .label
+                    label(for="password") password: 
+                .input
+                    input#password.password(name="password" type="password")
+            .formsubmit
+                input#submit.submit(type="submit" value="Unregister") 
+
+    .errors
+        if status === 403
+            p To participate you must authenticate

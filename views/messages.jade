@@ -1,0 +1,112 @@
+extends layout
+
+block content
+
+  script(src="/javascripts/index.js" defer) 
+  .pageframe
+    .header
+      .user
+        p Welcome #{user.anom} 
+      .site 
+        h1 Messengineering
+    .appframe 
+      .profile
+        .content
+          .head
+            .img
+              img#avatar.avatar(src=user.avatar alt=user.anom + " profile image" title="profile image")
+              .horiz
+                .vert
+                  label.profile_lbl(for="choose_avatar" title="update/change profile image")
+                    span.material-symbols-outlined image
+                  input#choose_avatar.choose_avatar(type="file")
+                .vert
+                  label.profile_lbl.edit_profile(title="update/change profile image")
+                    span.material-symbols-outlined(title="edit/change profile data") edit
+            .anom 
+              label.anom(for="anom") moniker
+              input#anom.anom.profile(placeholder="a nickname" value=user.anom)
+              input#_id._id(type="hidden" value=user._id) 
+            .logout 
+              form#logout.logout(method="post" action="/logout")
+                button#logout.logout(type="submit") 
+                  span.material-symbols-outlined(title="logout") logout 
+
+          .main(style="display:none") 
+            ul._profile 
+              li._profile 
+                label(for="email") Email
+                input#email.email.profile(type="email" placeholder="your email address" value=user.email)
+              li._profile 
+                label(for="forename") Forename
+                input#forename.forename.profile(placeholder="your forename" value=user.forename)
+              li._profile 
+                label(for="surname") Surname
+                input#surname.surname.profile(placeholder="your surname" value=user.surname)
+            .actions
+            ul.actions 
+              li._profile 
+                button#change_password.change_password 
+                  span.material-symbols-outlined(title="change password") password
+                  //- span.label change password
+              li._profile 
+                button#unregister.unregister 
+                  span.material-symbols-outlined(title="delete your account and logout") backspace 
+                  //- span.label unregister
+ 
+      .messagestream 
+        .head 
+          p be your best self and give your best stream of conciousness ...
+        .stream
+          ul.stream
+            li.stream.left
+              .speech_left.left
+                .payload_text
+                  input.payload(value=" whatever content")
+                .payload_attached
+                   
+                .payload_controls
+                  label.payload_img(for="payload_img") 
+                    span.material-symbols-outlined image
+                  input#payload_img.payload_img(type="file")
+              .payload_owner.left 
+                span.payload_owner 
+                span.payload_time
+
+            li.stream.right
+              .payload_owner.right 
+                span.payload_owner 
+                span.payload_time
+              .speech_right.right
+                .payload_text
+                  input.payload(value=" whatever content")
+                .payload_attached
+                  
+                .payload_controls
+                  label.payload_img(for="payload_img")
+                    span.material-symbols-outlined image
+                  input#payload_img.payload_img(type="file")
+        .new_message 
+          .recipient 
+            label#_recipients._recipients(for="recipients") message to
+            select#recipients.recipients
+              option(value="-1") #{"to recipient ... "}
+          .payload
+            input#payload.payload(type="text")
+            label.attachment(for="attachment" title="attach an image")
+              span.material-symbols-outlined image
+              input#attachment.attachment(type="file" title="attach an image")
+            button#send.send 
+              span.material-symbols-outlined(title="send message") send             
+          .attachments
+          
+      .member_list
+        ul.member_list 
+          li.member
+            .container
+              img#avatar.avatar(src="" alt="MN" title="avatar member name")
+              .anom 
+                //- label.anom &nbsp;
+                span.anom member name
+    .footer
+      p &copy; 2023 :: byyten @ github all rights reserved :: another TOP Project (The Odin Project that is)

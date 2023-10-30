@@ -1,0 +1,10 @@
+extends layout
+
+block content
+ 
+  .errorframe
+    h3 Messengineering error 
+    .errors    
+      h4 #{message}  #{error.status}
+       
+      pre #{error.stack}

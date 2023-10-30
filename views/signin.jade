@@ -1,0 +1,37 @@
+extends layout 
+
+block content 
+    script. 
+        function logmein(evt) {
+            document.forms[0].username.value = "anomizr"
+            document.forms[0].password.value = "gottahaveone"
+            document.forms[0].querySelector("input[type='submit']").click()
+        }
+    .auth
+        form#authenticate.authenticate(method="POST" action="")
+            .formtitle 
+                h3 Messengineering
+            .formcontainer
+                .formsubtitle 
+                    p Authenticate :: enter your moniker and password
+                .inputlabel 
+                    .label
+                        label(for="username") moniker: 
+                    .input
+                        input#username.username(name="username" type="text")
+                .inputlabel 
+                    .label
+                        label(for="password") password: 
+                    .input
+                        input#password.password(name="password" type="password")
+                .formsubmit
+                    input#submit.submit(type="submit" value="Sign in") 
+
+                .formsubtitle 
+                    p bypass registration and use a demo account
+                .formsubmit
+                    input#submit.submit(type="button" value="Bypass" onclick="((evt) => { logmein(evt) })()") 
+
+        .errors
+            if status === 403
+                p To participate you must authenticate
